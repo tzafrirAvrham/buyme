@@ -45,6 +45,7 @@ public class SignUpTest extends BaseTest {
     }
     @Test
     public void test02_errorForPassword(){
+        myTest= extent.startTest(Thread.currentThread().getStackTrace()[1].getMethodName());
 
         signUpPage
                 .insertPassword("jjj")
