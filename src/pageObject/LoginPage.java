@@ -5,12 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage{
 
-    public LoginPage(WebDriver driver){
-        super(driver);
-    }
-    // web element
-
-    By emailFiled= By.xpath("//form/div[1]/label/input[@type='email']");
+    //Attributes
+    By emailFiled= By.xpath("//form/div[1]/label/input");
     By loginWithFacebook= By.cssSelector("div[class='social-btn facebook']");
     By loginWithGoogle= By.cssSelector("div[class='social-btn google']");
     By passwordFiled= By.xpath("//form/div[2]/label/input[@type='password']");
@@ -18,12 +14,17 @@ public class LoginPage extends BasePage{
     By registerClick= By.cssSelector("span[class='text-link theme']");
     By rememberMeClick= By.xpath("//div[@class='ember-view bm-checkbox checked']/div/span[1]");
     By loginClick= By.cssSelector("button[type='submit'][class='ember-view bm-btn no-reverse main md stretch']");
+    By errorMassageEmailFiled= By.xpath("//form/div[1]/label/ul/li");
+    By errorMassagePasswordFiled= By.xpath("//form/div[2]/label/ul/li");
 
 
+    //Constructor
+    public LoginPage(WebDriver driver){
+        super(driver);
+    }
 
 
-    //page Method
-
+    //Functions
     public LoginPage clickOnLogin(){
         click(loginClick);
         return  this;
@@ -53,9 +54,17 @@ public class LoginPage extends BasePage{
         writeText(emailFiled, mail);
         return this;
     }
-    public LoginPage insertPassword(){
-        writeText(passwordFiled, "123456");
+    public LoginPage insertPassword(String password){
+        writeText(passwordFiled, password);
         return this;
+    }
+    public String errorMessageEmailFiled(){
+
+        return errorMessage(errorMassageEmailFiled);
+    }
+    public String errorMessagePasswordFiled(){
+
+        return errorMessage(errorMassagePasswordFiled);
     }
 
 
