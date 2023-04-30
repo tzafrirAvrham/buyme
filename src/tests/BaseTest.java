@@ -90,7 +90,7 @@ public class BaseTest {
         driver.quit();
         screenRecorder.stop();
         myTest= extent.startTest(Thread.currentThread().getStackTrace()[1].getMethodName());
-        myTest.log(LogStatus.INFO, "screen:" + myTest.addScreencast((recordPath + "\\" + System.currentTimeMillis())));
+        myTest.log(LogStatus.INFO, "screen:" + myTest.addScreencast(screenRecorder.getCreatedMovieFiles().toString()));
         extent.flush();
     }
 
