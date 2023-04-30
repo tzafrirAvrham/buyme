@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <browser>chrome</browser>
+    <name>moshe</name>
+    <mail>yosis0065@gmail.com</mail>
+    <password>Pass1234</password>
+    <verifyPassword>Pass1234</verifyPassword>
+</config>
