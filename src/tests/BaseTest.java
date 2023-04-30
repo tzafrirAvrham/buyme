@@ -89,7 +89,6 @@ public class BaseTest {
     public static void closeTests() throws IOException {
         driver.quit();
         screenRecorder.stop();
-        myTest= extent.startTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         myTest.log(LogStatus.INFO, "screen:" + myTest.addScreencast(screenRecorder.getCreatedMovieFiles().toString()));
         extent.flush();
     }
